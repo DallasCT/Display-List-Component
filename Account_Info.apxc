@@ -1,0 +1,8 @@
+public class Account_Info {
+    @AuraEnabled
+    public static List<Account> getAccount(string AccId){ //Array/list method called "getAccount"
+        //Collection Type = List<Account>
+        List<Account> AccInfo = [SELECT Id,Name FROM Account Where Id=:AccId]; //List<Account>(Back End) is the same thing as Account[](Front End)
+        return AccInfo; //Returning collection type List<Account>
+    }
+}
